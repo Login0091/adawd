@@ -1,0 +1,269 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Login hub best version for Login_0091", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "bad news :skull:",
+	Content = "i create to use myself no one cant get only me",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Tab = Window:MakeTab({
+	Name = "basic",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "basic not have much skill so create"
+})
+
+Tab:AddLabel("also thanks for used my script for no reason")
+
+Tab:AddButton({
+	Name = "Teleport to Top",
+	Callback = function()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-321.290497, 191.302994, -0.344614685, -0.0290203746, 2.49760266e-08, -0.999578834, -6.58836008e-09, 1, 2.51778278e-08, 0.999578834, 7.31625516e-09, -0.0290203746)
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to spawn",
+	Callback = function()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(254.9913787841797, 112.96031188964844, -3.461440086364746)
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kill king",
+	Callback = function()local king = game.ReplicatedStorage.Values.CurrentKing.Value
+        local args = {
+            [1] = game:GetService("Players")[king].Character.Humanoid,
+            [2] = 150000,
+            [3] = 1500000000
+        }
+        game:GetService("ReplicatedStorage").Events.DO_DAMAGE:FireServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Heal king",
+	Callback = function()local king = game.ReplicatedStorage.Values.CurrentKing.Value
+        local args = {
+            [1] = game:GetService("Players")[king].Character.Humanoid,
+            [2] = -150000,
+            [3] = 1500000000
+        }
+        
+        game:GetService("ReplicatedStorage").Events.DO_DAMAGE:FireServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kill all",
+	Callback = function()local Players = game:GetService("Players")
+
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local args = {
+                [1] = player.Character.Humanoid,
+                [2] = 99999999999999999,
+                [3] = 300000000000000000000
+            }
+        
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DO_DAMAGE"):FireServer(unpack(args))
+        end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Heal all",
+	Callback = function()local Players = game:GetService("Players")
+
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local args = {
+                [1] = player.Character.Humanoid,
+                [2] = -99999999999999999,
+                [3] = 300000000000000000000
+            }
+        
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DO_DAMAGE"):FireServer(unpack(args))
+        end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Forcefield cant remove",
+	Callback = function()local mt = getrawmetatable(game)
+        make_writeable(mt)
+        local namecall = mt.__namecall
+        mt.__namecall = newcclosure(function(self, ...)
+            local method = getnamecallmethod()
+            local args = { ... }
+            if method == "FireServer" and tostring(self) == "createForceField" then
+                if args[1] == "remove" then
+                    return
+                end
+            end
+            return namecall(self, table.unpack(args))
+        end)
+      		print("button pressed")
+  	end    
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "Armor",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab1:AddSection({
+	Name = "Armor only because i lazy :^"
+})
+
+Tab1:AddButton({
+	Name = "Free copper armor",
+	Callback = function()local args = {
+        [1] = "Copper Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free bluesteel armor",
+	Callback = function()local args = {
+        [1] = "Bluesteel Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free Diamond armor",
+	Callback = function()local args = {
+        [1] = "Diamond Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free magicka armor",
+	Callback = function()local args = {
+        [1] = "Magicka Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free overseer armor",
+	Callback = function()local args = {
+        [1] = "Overseer Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "free ruby armor",
+	Callback = function()local args = {
+        [1] = "Ruby Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free pearl armor",
+	Callback = function()local args = {
+        [1] = "Pearl Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Op thing",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab2:AddSection({
+	Name = "Op scripts is here"
+})
+
+Tab2:AddButton({
+	Name = "Everything you need to spam",
+	Callback = function()local lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/TheoTheEpic/AquaLib/main/AquaLib.lua'))()
+
+		local window = lib.createWindow("Aqua", "ello dumb skid man/girl", true) 
+		
+		local tab1 = window.createTab("you need")
+		local section1 = tab1.createSection("everything you need is here 1", false)
+		
+		section1.createButton("Ice spam", function()
+			print("Button Pressed!")_G.IceSpam = true
+			while wait() and _G.IceSpam do
+				pcall(function()
+					for i, v in pairs(game.Players:GetChildren()) do
+						if v.Name ~= game.Players.LocalPlayer.Name then
+							game:GetService("ReplicatedStorage").Events.createIce:FireServer(v.Character.HumanoidRootPart.CFrame.p)
+						end
+					end
+				end)
+			end
+		end)
+		
+		section1.createButton("Un ice spam", function()_G.IceSpam = false
+			print("Button Pressed!")
+		end)
+		
+		local section2 = tab1.createSection("everything you need is here 2", false)
+		
+		section2.createButton("Lightning spam", function()_G.LightningSpam = true
+			while wait(0.1) and _G.LightningSpam do
+				pcall(function()
+					for i, v in pairs(game.Players:GetChildren()) do
+						if v.Name ~= game.Players.LocalPlayer.Name then
+							game:GetService("ReplicatedStorage").Events.createLightning:FireServer(v.Character.HumanoidRootPart.CFrame.p)
+						end
+					end
+				end)
+			end
+			print("Button Pressed!")
+		end)
+		
+		section2.createButton("Un lightning spam", function()_G.LightningSpam = false
+			print("Button Pressed!")
+		end)
+      		print("button pressed")
+  	end    
+})
