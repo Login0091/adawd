@@ -368,63 +368,6 @@ Tab2:AddButton({
 })
 
 Tab2:AddButton({
-	Name = "Free ban hammer",
-	Callback = function()local function createMovingFrame()
-		local screenGui = Instance.new("ScreenGui")
-		screenGui.Parent = game.Players.LocalPlayer.PlayerGui
-	
-		local frame = Instance.new("Frame")
-		frame.Size = UDim2.new(1, 0, 1, 0) -- Full screen size
-		frame.BackgroundColor3 = Color3.new(1, 1, 1) -- White background
-		frame.Parent = screenGui
-	
-		local textLabel = Instance.new("TextLabel")
-		textLabel.Size = UDim2.new(1, 0, 0.9, 0) -- Leave more space for the close button
-		textLabel.Position = UDim2.new(0, 0, 0.05, 0) -- Push down the text
-		textLabel.Text = "u are an idiot no one can get ban hammer lol idiot remember there have close button" -- Add the text back
-		textLabel.TextColor3 = Color3.new(0, 0, 0) -- Black text color
-		textLabel.BackgroundTransparency = 1 -- Transparent background
-		textLabel.FontSize = Enum.FontSize.Size10 -- Smaller font size
-		textLabel.Parent = frame
-	
-		local closeButton = Instance.new("TextButton")
-		closeButton.Size = UDim2.new(0, 2, 0, 3) -- Super mini size
-		closeButton.Position = UDim2.new(1, -8, 0, 2) -- Positioned at the top right corner
-		closeButton.Text = "" -- Add the close button text back
-		closeButton.FontSize = Enum.FontSize.Size8 -- Smaller font size for the button
-		closeButton.TextColor3 = Color3.new(1, 0, 0) -- Red text color
-		closeButton.BackgroundColor3 = Color3.new(0.8, 0.8, 0.8) -- Light gray background
-		closeButton.BorderSizePixel = 0
-		closeButton.Parent = frame
-	
-		closeButton.MouseButton1Click:Connect(function()
-			screenGui:Destroy()
-		end)
-	
-		local function updateFramePosition()
-			local screenDimensions = game:GetService("GuiService"):GetScreenSize()
-			local offsetX = math.random(-screenDimensions.X.Offset + 10, screenDimensions.X.Offset - 10)
-			local offsetY = math.random(-screenDimensions.Y.Offset + 5, screenDimensions.Y.Offset - 5)
-			
-			local targetPosition = UDim2.new(0.5, offsetX, 0.5, offsetY)
-			
-			local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
-			game:GetService("TweenService"):Create(frame, tweenInfo, {Position = targetPosition}):Play()
-		end
-	
-		updateFramePosition()
-	end
-	
-	while true do
-		createMovingFrame()
-		wait(1) -- Wait for 1 second before spawning the next frame
-	end
-	
-      		print("button pressed")
-  	end    
-})
-
-Tab2:AddButton({
 	Name = "infinite yield",
 	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
       		print("button pressed")
