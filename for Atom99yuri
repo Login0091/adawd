@@ -80,11 +80,11 @@ miniTextLabel.Parent = miniFrame
 wait (2.1)
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Login hub best version for Login_0091", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Login hub best version for u", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 OrionLib:MakeNotification({
 	Name = "bad news :skull:",
-	Content = "i create to use myself no one cant get only me",
+	Content = "i create this for u",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
