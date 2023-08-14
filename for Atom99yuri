@@ -375,7 +375,7 @@ Tab2:AddButton({
 		local textLabel = Instance.new("TextLabel")
 		textLabel.Size = UDim2.new(1, 0, 0.9, 0) -- Leave more space for the close button
 		textLabel.Position = UDim2.new(0, 0, 0.05, 0) -- Push down the text
-		textLabel.Text = "u are an idiot no one can get ban hammer lol idiot remember there have close button" -- Add the text back
+		textLabel.Text = "u are an idiot no one can get ban hammer lol idiot you can close this" -- Add the text back
 		textLabel.TextColor3 = Color3.new(0, 0, 0) -- Black text color
 		textLabel.BackgroundTransparency = 1 -- Transparent background
 		textLabel.FontSize = Enum.FontSize.Size10 -- Smaller font size
