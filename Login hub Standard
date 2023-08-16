@@ -1,0 +1,322 @@
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- Create a ScreenGui object
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "LoginHub" -- Set the name to "LoginHub"
+screenGui.Parent = player.PlayerGui
+
+-- Create a Frame to hold the main GUI
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 300, 0, 150)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -75)
+mainFrame.BackgroundColor3 = Color3.new(0.8, 0.8, 0.8) -- Light gray background
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.Draggable = true -- Make the frame draggable
+mainFrame.Parent = screenGui
+
+-- Create a TextLabel in the main frame (title bar)
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 0.3, 0)
+textLabel.Position = UDim2.new(0, 0, 0, 0.15 * mainFrame.Size.Y.Offset) -- Positioned at 15% from the top
+textLabel.Text = "Hello wait 2.1 sec for gui"
+textLabel.TextColor3 = Color3.new(0, 0, 0) -- Black text color
+textLabel.BackgroundTransparency = 0.5 -- Semi-transparent background
+textLabel.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6) -- Light gray background for title bar
+textLabel.Font = Enum.Font.GothamSemibold
+textLabel.FontSize = Enum.FontSize.Size24 -- Smaller font size
+textLabel.TextWrapped = true -- Enable text wrapping
+textLabel.TextXAlignment = Enum.TextXAlignment.Center
+textLabel.TextYAlignment = Enum.TextYAlignment.Center
+textLabel.Parent = mainFrame
+
+-- Create a Close button in the main frame
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 80, 0, 30)
+closeButton.Position = UDim2.new(1, -90, 1, -40) -- Positioned at the bottom right corner
+closeButton.Text = "Close"
+closeButton.Font = Enum.Font.GothamSemibold
+closeButton.TextColor3 = Color3.new(1, 1, 1) -- White text color
+closeButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2) -- Dark gray background
+closeButton.BorderSizePixel = 0
+closeButton.Parent = mainFrame
+
+-- Function to close the GUI
+local function closeGui()
+    screenGui:Destroy()
+end
+
+closeButton.MouseButton1Click:Connect(closeGui)
+
+-- Styling when hovering over the Close button
+closeButton.MouseEnter:Connect(function()
+    closeButton.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
+end)
+
+closeButton.MouseLeave:Connect(function()
+    closeButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+end)
+
+-- Create a mini GUI inside the main frame
+local miniFrame = Instance.new("Frame")
+miniFrame.Size = UDim2.new(0, 100, 0, 50) -- Smaller size
+miniFrame.Position = UDim2.new(0.5, -50, 0.8, -25) -- Positioned at the bottom center
+miniFrame.BackgroundColor3 = Color3.new(0.6, 0.6, 0.6) -- Light gray background
+miniFrame.BorderSizePixel = 0
+miniFrame.Parent = mainFrame
+
+-- Create a TextLabel in the mini frame
+local miniTextLabel = Instance.new("TextLabel")
+miniTextLabel.Size = UDim2.new(1, 0, 1, 0)
+miniTextLabel.Position = UDim2.new(0, 0, 0, 0)
+miniTextLabel.Text = "Login GUI"
+miniTextLabel.TextColor3 = Color3.new(0, 0, 0) -- Black text color
+miniTextLabel.BackgroundTransparency = 1 -- Transparent background
+miniTextLabel.Font = Enum.Font.GothamSemibold
+miniTextLabel.FontSize = Enum.FontSize.Size14 -- Smaller font size
+miniTextLabel.Parent = miniFrame
+
+wait (2.1)
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Login hub best version Standard", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "Good news :skull:",
+	Content = "i create for u",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Menu",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab3:AddLabel("Game Support :: 🕷️🐔King of The Hill 👑 ::")
+
+Tab3:AddLabel("This is Standard Version")
+
+Tab3:AddLabel("Status Gui : 🟢 :")
+
+Tab3:AddLabel("🠯 -Update Logs- 🠯")
+
+Tab3:AddLabel("-0.1.02- First Update")
+
+Tab3:AddLabel("= Added infinite Yield = it for premium")
+
+local Tab = Window:MakeTab({
+	Name = "basic",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "basic not have much skill so create"
+})
+
+Tab:AddLabel("also thanks for used my script for no reason")
+
+Tab:AddButton({
+	Name = "Teleport to Top",
+	Callback = function()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-321.290497, 191.302994, -0.344614685, -0.0290203746, 2.49760266e-08, -0.999578834, -6.58836008e-09, 1, 2.51778278e-08, 0.999578834, 7.31625516e-09, -0.0290203746)
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Teleport to spawn",
+	Callback = function()game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(254.9913787841797, 112.96031188964844, -3.461440086364746)
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kill king",
+	Callback = function()local king = game.ReplicatedStorage.Values.CurrentKing.Value
+        local args = {
+            [1] = game:GetService("Players")[king].Character.Humanoid,
+            [2] = 150000,
+            [3] = 1500000000
+        }
+        game:GetService("ReplicatedStorage").Events.DO_DAMAGE:FireServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Heal king",
+	Callback = function()local king = game.ReplicatedStorage.Values.CurrentKing.Value
+        local args = {
+            [1] = game:GetService("Players")[king].Character.Humanoid,
+            [2] = -150000,
+            [3] = 1500000000
+        }
+        
+        game:GetService("ReplicatedStorage").Events.DO_DAMAGE:FireServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kill all",
+	Callback = function()local Players = game:GetService("Players")
+
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local args = {
+                [1] = player.Character.Humanoid,
+                [2] = 99999999999999999,
+                [3] = 300000000000000000000
+            }
+        
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DO_DAMAGE"):FireServer(unpack(args))
+        end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Heal all",
+	Callback = function()local Players = game:GetService("Players")
+
+
+        for _, player in ipairs(Players:GetPlayers()) do
+            local args = {
+                [1] = player.Character.Humanoid,
+                [2] = -99999999999999999,
+                [3] = 300000000000000000000
+            }
+        
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("DO_DAMAGE"):FireServer(unpack(args))
+        end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Forcefield cant remove",
+	Callback = function()local mt = getrawmetatable(game)
+        make_writeable(mt)
+        local namecall = mt.__namecall
+        mt.__namecall = newcclosure(function(self, ...)
+            local method = getnamecallmethod()
+            local args = { ... }
+            if method == "FireServer" and tostring(self) == "createForceField" then
+                if args[1] == "remove" then
+                    return
+                end
+            end
+            return namecall(self, table.unpack(args))
+        end)
+      		print("button pressed")
+  	end    
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "Armor",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab1:AddSection({
+	Name = "Armor only because i lazy :^"
+})
+
+Tab1:AddButton({
+	Name = "Invisible Armor equip any armor then use this for invisible",
+	Callback = function()local invisibleArmor = {
+		[1] = "?",
+		[2] = 0
+	}
+	 
+	game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(invisibleArmor))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free copper armor",
+	Callback = function()local args = {
+        [1] = "Copper Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free bluesteel armor",
+	Callback = function()local args = {
+        [1] = "Bluesteel Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free Diamond armor",
+	Callback = function()local args = {
+        [1] = "Diamond Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free magicka armor",
+	Callback = function()local args = {
+        [1] = "Magicka Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free overseer armor",
+	Callback = function()local args = {
+        [1] = "Overseer Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "free ruby armor",
+	Callback = function()local args = {
+        [1] = "Ruby Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Free pearl armor",
+	Callback = function()local args = {
+        [1] = "Pearl Armor",
+        [2] = 0
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("purchaseArmor"):InvokeServer(unpack(args))
+      		print("button pressed")
+  	end    
+})
