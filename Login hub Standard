@@ -99,13 +99,15 @@ Tab3:AddLabel("Game Support :: 🕷️🐔King of The Hill 👑 ::")
 
 Tab3:AddLabel("This is Standard Version")
 
-Tab3:AddLabel("Status Gui : 🟢 :")
+Tab3:AddLabel("Status Gui : 🟡 :")
 
 Tab3:AddLabel("🠯 -Update Logs- 🠯")
 
 Tab3:AddLabel("-0.1.02- First Update")
 
-Tab3:AddLabel("= Added infinite Yield = it for premium")
+Tab3:AddLabel(" Added infinite Yield ")
+
+Tab3:AddLabel(" not fully working ")
 
 local Tab = Window:MakeTab({
 	Name = "basic",
